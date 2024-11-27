@@ -1,0 +1,212 @@
+                                                        :Arrays:
+                                                     =============
+
+//1)remove the duplicates from the ArrayList
+=============================================
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        List<Integer> list = new ArrayList<>();
+        list.add(5);
+        list.add(4);
+         list.add(3);
+          list.add(2);
+           list.add(1);
+            list.add(4); 
+            System.out.println(list);
+            Set<Integer> set = new HashSet<>();
+            for(int num:list){
+                set.add(num);
+            }
+            System.out.println(set);
+    }
+}
+//2)Find the smallest and Larjest in the Array
+==============================================
+
+public class Main{
+    public static void main(String[] args){
+        int arr[] = {4,6,2,3,7,8,9};
+        int larj = arr[0];
+        int small = arr[0];
+        for(int num:arr){
+            if(small>num){
+                small = num;
+            }
+            if(larj<num){
+                larj = num;
+            }
+        }
+        System.out.println(small);
+        System.out.println(larj);
+    }
+}
+//3)Sort the Array 
+==================
+public class Main{
+    public static void main(String[] args){
+        int arr[] = {4,6,2,3,7,8,9};
+        int len = arr.length;
+        for(int i=0;i<len-1;i++){
+            for(int j=0;j<len-1;j++){
+                if(arr[j]>arr[j+1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+        for(int num :arr){
+            System.out.print(num+",");
+        }
+    }
+}
+//4) find the duplicate values in the Arrays
+=============================================
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        int arr[] = {4,6,2,3,7,8,9,2,4};
+Set<Integer> set = new HashSet<>();
+for(int num :arr){
+    set.add(num);
+}
+int[] uarr = new int[set.size()];
+int i=0;
+for(int s :set){
+ uarr[i++] = s;
+}
+
+System.out.println(set);
+System.out.println(Arrays.toString(uarr));
+    }
+}
+//5) find the common elements in the 2 Arrays
+=============================================
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        int arr[] = {4,6,2,3,7,8,9,2,4};
+        int arr1[] = {2,6,8,5,3,6,9} ;
+for(int i=0;i<arr.length;i++){
+    for(int j=0;j<arr1.length;j++){
+        if(arr[i]==arr1[j]){
+            System.out.print(arr[i]+",");
+        }
+    }
+}
+    }
+}
+//6) find the missing element in the Array
+==========================================
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        int arr[] = {1,2,3,4,5,6,7,9};
+    int n = arr.length+1;
+    int totalsum = n*(n+1)/2;
+    int arraysum=0;
+    for(int s :arr){
+        arraysum +=s;
+    }
+    System.out.println(totalsum-arraysum);
+    }
+}
+
+//2) Search element in the Array
+================================
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        int arr[] = {1,2,3,4,5,6,7,9};
+    int tar = 5;
+    int c = 0;
+    for(int i=0;i<arr.length;i++){
+        if(arr[i]==tar){
+            c = arr[i];
+        }
+    }
+  System.out.print(c);
+}
+}
+
+//7)array consist the numbers and letters sum only numbers
+==========================================================
+public class Main{
+    public static void main(String[] args){
+        String[] str= {"g","p","o","8","9"};
+int sum =0;
+    for( String c:str){
+        try{
+            sum +=Integer.parseInt(c);
+        }
+        catch(NumberFormatException e){
+        System.out.println(e);
+        }
+    }
+    System.out.println(sum);
+        }
+    }
+
+//8)count and sum of the even and odd numbers in array
+======================================================
+public class Main{
+    public static void main(String[] args){
+        int[] str= {2,3,5,7,4,8,2,4};
+int ecount =0;
+int ocount =0;
+int esum =0;
+    for( int c:str){
+        if(c%2==0){
+            ecount++;
+            esum +=c;
+        }else{
+            ocount++;
+        }
+    }
+    System.out.println(ecount+":"+esum);
+    System.out.println(ocount);
+}
+}
+9)print the non repeated elements in array()
+============================================
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 1, 2, 3, 4, 5};
+        
+        Map<Integer, Integer> map = new HashMap<>();
+        
+        // Count occurrences of each element
+        for (int num : arr) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+        
+        // Print non-repeated elements
+        System.out.print("Non-repeated elements: ");
+        for (int num : arr) {
+            if (map.get(num) == 1) {
+                System.out.print(num + " ");
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

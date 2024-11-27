@@ -1,0 +1,227 @@
+                    :String programs:
+                   ====================
+
+1)In a string count the numbers and Sum:
+========================================
+
+public class Main
+{
+	public static void main(String[] args) {
+		String str = "gopi@1234";
+	int num =0;
+	int sum =0;
+	for(char c:str.toCharArray()){
+	    if(Character.isDigit(c)){
+	        num++;
+	        sum +=Integer.parseInt(String.valueOf(c));
+	    }
+	}
+	System.out.println(sum +":"+ num);
+	}
+}
+
+2)Swap the String variables without using third variable
+==========================================================
+public class Main
+{
+	public static void main(String[] args) {
+		String str1 = "gopi";
+		String str2 = "varaprasad";
+str1 = str1+str2;
+str2 =str1.substring(0,str1.length()-str2.length());
+str1 =str1.substring(str2.length());
+System.out.println(str1 +":"+ str2);
+	}
+}
+//3)print every Character doble time in a String
+==============================================
+public class Main{
+    public static void main(String[] args){
+     String str= "Gopi";
+     StringBuffer rs = new StringBuffer();
+     for(int i=0;i<str.length();i++){
+         char v = str.charAt(i);
+         rs.append(v).append(v);
+     }
+     System.out.println(rs.toString());
+         }
+     }
+
+//4)remove spaces from the given String
+=====================================
+public class Main{
+    public static void main(String[] args){
+     String str= "Gopi vara prasad";
+     for(int i=0;i<str.length();i++){
+         if(str.charAt(i) !=' '){
+             System.out.print(str.charAt(i));
+         }
+     }
+         }
+     }
+//5)print even indexes from the given String
+============================================
+public class Main{
+    public static void main(String[] args){
+     String str= "Gopi vara prasad";
+     for(int i=0;i<str.length();i++){
+         if(i%2==0){
+             System.out.print(str.charAt(i));
+         }
+     }
+         }
+     }
+
+//6)print unique characters from the given String
+===============================================
+public class Main{
+    public static void main(String[] args){
+     String str= "Gopi vara prasad12312";
+     boolean[] uniuqe = new boolean[128];//aschii
+     for(char c:str.toCharArray()){
+     if(!uniuqe[c]){
+         uniuqe[c]=true;
+         System.out.print(c+" ");
+     }
+         }
+     }
+}
+//8)Count the vowels constants in string
+======================================
+public class Main{
+    public static void main(String[] args){
+     String str= "Gopivaraprasad";
+     String v ="";
+     int vc=0;
+     String wv="";
+     int wvc=0;
+     for(char c:str.toCharArray()){
+         if("aeiou".indexOf(c) !=-1){
+             vc++;
+             v +=c;
+         }else{
+             wvc++;
+             wv +=c;
+         }
+     }
+     System.out.println(wv +":"+ wvc);
+     System.out.println(vc+":"+v);
+         }
+     }
+
+//9)If two Strings are anagrams or not :
+========================================
+public class Main{
+    public static void main(String[] args){
+     String str1 = "listen";
+     String str2 = "silent";
+    System.out.println(isAnagram(str1,str2));
+        
+    }
+     public static boolean isAnagram(String str1, String str2){
+     int[] ans = new int[256];//Aschii
+     for(int i=0;i<str1.length();i++){
+         ans[str1.charAt(i)]++;
+         ans[str2.charAt(i)]--;
+     }for(int num:ans){
+         if(num !=0){
+         return false;
+         } 
+     }
+     return true;
+}
+}
+
+//10)No of permatations in a string
+===================================
+public class Main{
+    public static void main(String[] args){
+     String str1 = "abc";
+     permute(str1," ");
+    }
+    public static void permute(String str1 ,String prefix){
+        if(str1.length() ==0){
+            System.out.println(prefix);
+        }
+        for(int i=0;i<str1.length();i++){
+            
+        String rem = str1.substring(0,i)+str1.substring(i+1);
+        permute(rem,prefix+str1.charAt(i));
+        }
+    }
+     
+}
+//11)count of each word in given String:
+========================================
+public class Main{
+    public static void main(String[] args){
+        String str ="gopi vara prasad";
+        String[] words = str.split(" ");
+        System.out.println(words.length);
+    }
+}
+//12)how many times occurance of a each word in a given String:
+===============================================================
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        String str ="gopi vara prasad gopi";
+        String[] words =str.split(" ");
+        Map<String,Integer> map = new HashMap<>();
+        for(String s :words){
+            if(map.containsKey(s)){
+                map.put(s,map.get(s)+1);
+            }else{
+                map.put(s,1);
+            }
+        }
+        System.out.print(map);
+    }
+}
+
+//13)reverse the String with words
+===================================
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        String str ="gopi vara prasad gopi";
+        String[] words =str.split(" ");
+        StringBuilder rs = new StringBuilder();
+        for(int i=words.length-1;i>=0;i--){
+            String parts = words[i];
+            rs.append(parts).append(" ");
+    }
+    System.out.println(rs.toString());
+    }
+}
+//1)reverse the String with palindrome check
+============================================
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        String str ="gyg";
+       String rev ="";
+        for(int i=str.length()-1;i>=0;i--){
+        rev +=str.charAt(i);
+    }
+     System.out.println(rev);
+     if(rev.equals(str)){
+         System.out.println("its a palim");
+     }else{
+         System.out.println("its not a palim");
+     }
+}
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+

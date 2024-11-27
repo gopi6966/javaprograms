@@ -1,0 +1,298 @@
+29/06/2024                                                                         omssnamahl
+===========                                                                       ===========
+1)Reverse String With Words
+===========================
+public class Main{
+    public static void main(String[] args){
+        String str ="gopi vara prasad";
+        String[] words = str.split(" ");
+        StringBuilder rs = new StringBuilder();
+        for(int i=words.length-1;i>=0;i--){
+            String parts = words[i];
+            rs.append(parts).append(" ");
+            }
+            System.out.println(rs.toString().trim());
+        }
+}
+
+2Reverse String with palindrome
+==================================
+public class Main{
+    public static void main(String[] args){
+        String str ="gvg";
+        String rev ="";
+        for(int i=str.length()-1;i>=0;i--){
+          rev +=str.charAt(i);
+            }
+            System.out.println(rev);
+            if(rev.equals(str)){
+                System.out.println("its a plaindrome");
+            }else{
+                System.out.println("its not a palindrome");
+            }
+        }
+}
+3)Count only numbers & sum  of the numbers in String (234gopi54321)
+===================================================================
+public class Main{
+    public static void main(String[] args){
+        String str ="23gvg123";
+        int sum =0;
+        int count =0;
+        for(char c:str.toCharArray()){
+           if(Character.isDigit(c)){
+               count++;
+               sum +=Character.getNumericValue(c);
+           }
+       
+        }
+        System.out.println(count+":"+sum);
+}
+}
+4)print the duplicate values in String
+======================================
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        String str ="gopivaraprasad";
+        int[] ccount = new int[256];//aschii
+        List<Character> dup = new ArrayList<>();
+        StringBuffer rs = new StringBuffer();
+        for(char c:str.toCharArray()){
+            ccount[c]++;
+            if(ccount[c]>1){
+                dup.add(c);
+            }else{
+                rs.append(c);
+            }
+            
+        }
+        for(int i=0;i<ccount.length;i++){
+            if(ccount[i]>1){
+                System.out.println((char)i+":"+ccount[i]+"times");
+            }
+        }
+        System.out.println(rs.toString());
+}
+}
+5)no of permutations in a given String
+=======================================
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        String str ="abc";
+        permute(str," ");
+}
+public static void permute(String str,String prefeix){
+    if(str.length()==0){
+        System.out.println(prefeix);
+    }
+    for(int i=0;i<str.length();i++){
+    String rem = str.substring(0,i)+str.substring(i+1);
+    permute(rem,prefeix+str.charAt(i));
+    }
+}
+}
+6)Two Strings are angrams or not
+=================================
+public class Main
+{
+	public static void main(String[] args) {
+		String str1 = "listen";
+		String str2 = "silent";
+		
+		System.out.println(angram(str1 , str2));
+	}
+	public static boolean angram(String str1 , String str2){
+	    if(str1.length()!=str2.length()){
+	        return false;
+	    }
+	    int[] ang = new int[256];//aschii
+	    for(int i=0;i<str1.length();i++){
+	        ang[str1.charAt(i)]++;
+	        ang[str2.charAt(i)]--;
+	    }
+	    for(int num:ang){
+	        if(num !=0){
+	            return false;
+	        }
+	       
+	    }
+	     return true;
+	}
+}
+
+7)count vowels and constants in String
+======================================
+public class Main
+{
+	public static void main(String[] args) {
+		String str = "listen".toLowerCase();
+		int vc = 0;
+		String sc = "";
+		int wvc = 0;
+		String wvs ="";
+		for(char c:str.toCharArray()){
+		    if("aeiou".indexOf(c) !=-1){
+		        vc++;
+		        sc +=c;
+		    }else{
+		        wvc++;
+		        wvs +=c;
+		    }
+		}
+		System.out.println(vc+":"+sc);
+		System.out.println(wvc+":"+wvs);
+	}
+	
+}
+8)unique characters in String
+==============================
+public class Main
+{
+	public static void main(String[] args) {
+		String str = "listenggopi";
+		boolean[] unique = new boolean[128];
+		for(char c:str.toCharArray()){
+		    if(!unique[c]){
+		       unique[c] = true;
+		       System.out.print(c+" ");
+		    }
+		}
+	
+	}
+	
+}
+9)Print even index characters in String
+=======================================
+public class Main
+{
+	public static void main(String[] args) {
+		String str = "listenggopi";
+		for(int i=0;i<str.length();i++){
+		    char ch = str.charAt(i);
+		    if(i%2==0)
+		       System.out.print(str.charAt(i)+",");
+		    }
+		}
+	
+	}
+10)print without spaces forom the given String
+==============================================
+	public class Main
+{
+	public static void main(String[] args) {
+		String str = "lis tengg opi";
+		for(int i=0;i<str.length();i++){
+		    char ch = str.charAt(i);
+		    if(ch !=' '){
+		       System.out.print(str.charAt(i)+"");
+		    }
+		}
+	
+	}
+}
+11)print the each characters double in the String("ggooppii")
+========================================================
+public class Main
+{
+	public static void main(String[] args) {
+		String str = "gopi";
+		StringBuilder rs = new StringBuilder();
+		for(int i=0;i<str.length();i++){
+		    char ch = str.charAt(i);
+		    rs.append(ch).append(ch);
+		    }
+		
+	System.out.println(rs.toString());
+	}
+}
+12)Swap two Strings without using third variable
+================================================= 
+public class Main
+{
+	public static void main(String[] args) {
+		String s1 = "gopi";
+		String s2 = "varaprasad";
+            s1 = s1+s2;
+		s2 = s1.substring(0,s1.length()-s2.length());
+		s1 = s1.substring(s2.length());
+		System.out.println(s1+":"+s2);
+	}
+
+}
+
+/13)print the double time characters in String("2a2b2c2d)
+=======================================================
+public class Main{
+    public static void main(String[] args){
+        String str = "aabbccdd";
+        int count = 1;
+        StringBuilder rs = new StringBuilder();
+        for(int i=0;i<str.length();i++){
+            if(i+1<str.length()&&str.charAt(i)==str.charAt(i+1)){
+                count++;
+            }else{
+                rs.append(str.charAt(i)).append(count);
+                count=1;
+            }
+        }
+        System.out.println(rs.toString());
+    }
+}
+14)count of how many times occurance of each word in a String
+==============================================================
+ import java.util.*;
+ class Main{
+    public static void main(String[] args){
+        String str = "gopi vara prasad gopi";
+        String[] words = str.split(" ");
+        Map<String , Integer> map = new HashMap<>();
+        for(String s:words){
+            if(map.containsKey(s)){
+                map.put(s,map.get(s)+1);
+            }else{
+                map.put(s,1);
+            }
+        }
+        System.out.println(map);
+    }
+}
+15)how many words in a given String
+===================================
+ import java.util.*;
+ class Main{
+    public static void main(String[] args){
+        String str = "gopi vara prasad gopi";
+        String[] words = str.split(" ");
+        System.out.println(words.length);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

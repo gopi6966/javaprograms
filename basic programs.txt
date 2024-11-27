@@ -1,0 +1,214 @@
+                    :basic programs:
+                   ===================
+//1)Calculate the sum&count of number:
+======================================
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        int num =12345;
+        int count =0;
+        int sum =0;
+while(num !=0){
+    int rem = num%10;
+    count++;
+    sum +=rem;
+    num =num/10;
+}
+System.out.println(count +":"+sum);
+}
+    
+}
+//2)reverse a number and check palim or not:
+============================================
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        int num =12345;
+        int onum =num;
+        int rev=0;
+while(num !=0){
+    int rem = num%10;
+     rev = rev*10+rem;
+    num =num/10;
+}
+System.out.println(rev);
+if(onum == rev){
+    System.out.println("its a palim");
+}else{
+    System.out.println("its not a plaim");
+}
+}
+    
+}
+
+//3)Armstrong number
+====================
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        int num =153;
+        int onum = num;
+        int a =0;
+        int arm=0;
+while(num !=0){
+    a = num%10;
+     arm  = arm+a*a*a;
+    num =num/10;
+}
+System.out.println(arm);
+if(arm == onum){
+    System.out.println(true);
+}else{
+    System.out.println(false);
+}
+}
+    
+}
+
+//4)factorial of a given number
+================================
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        int num =5;
+        int res =1;
+for(int i=1;i<=num;i++){
+    res *=i;
+}
+System.out.println(res);
+}
+}
+    
+          (or)
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        int num =5;
+        System.out.println(isfact(num));
+    }
+    public static int isfact(int num){
+        if(num==0){
+            return 1;
+        }else{
+            return num*isfact(num-1);
+        }
+    }
+}
+
+//5)Swap the two numbers without using third variable
+===================================================
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        int a=5;
+        int b =10;
+     a =a+b;
+     b = a-b;
+     a= a-b;
+     System.out.println("a= "+a+":"+"b= "+b);
+    }
+}
+
+
+//6)Fibonacci series of the given number:
+=======================================
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        int num=5;
+        int fterm =0,sterm=1,nterm=0;
+        for(int i=0;i<=num;i++){
+            nterm = fterm+sterm;
+            fterm = sterm;
+            sterm = nterm;
+        
+     System.out.println(nterm);
+        }
+    }
+}
+
+//7)prime no progarm
+===================
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        int num=5;
+       System.out.println(isprime(num));
+       for(int i=0;i<20;i++){
+           if(isprime(i))
+           System.out.print(i+",");
+       }
+    }
+    public static boolean isprime(int num){
+        
+        for(int i=2;i<num/2;i++){
+            if(num%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    }
+
+//8)prime no progarm
+==================
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        int num=5;
+       System.out.println(isodd(num));
+       for(int i=0;i<20;i++){
+           if(isodd(i))
+           System.out.print(i+",");
+       }
+    }
+    public static boolean isodd(int num){
+            if(num%2==0){
+                return false;
+            }
+            return true;
+        }
+        
+}
+    
+//8)Even or Odd no progarm
+========================
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        int num=5;
+       System.out.println(isodd(num));
+       for(int i=0;i<20;i++){
+           if(isodd(i))
+           System.out.print(i+",");
+       }
+    }
+    public static boolean isodd(int num){
+            if(num%2==0){
+                return false;
+            }
+            return true;
+        }
+        
+}
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
